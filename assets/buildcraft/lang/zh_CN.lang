@@ -1,5 +1,4 @@
 # zh_CN
-# Translated by hendyzone
 
 buildcraft.boardRobotPicker=拾物机器人
 buildcraft.boardRobotLumberjack=伐木机器人
@@ -148,6 +147,16 @@ direction.south=南方
 direction.up=顶端
 direction.down=底端
 
+direction.center.0=西北方
+direction.center.1=北方
+direction.center.2=东北方
+direction.center.3=西方
+direction.center.4=中央
+direction.center.5=东方
+direction.center.6=西南方
+direction.center.7=南方
+direction.center.8=东南方
+
 fillerpattern.clear=清除
 fillerpattern.fill=填充
 fillerpattern.flatten=平整
@@ -157,6 +166,8 @@ fillerpattern.stairs=阶梯型
 fillerpattern.box=盒状
 fillerpattern.cylinder=柱体
 fillerpattern.frame=框架
+fillerpattern.parameter.hollow=中空
+fillerpattern.parameter.filled=填满
 
 fluid.oil=原油
 fluid.fuel=燃油
@@ -168,7 +179,7 @@ gate.action.machine.off=关
 gate.action.machine.loop=循环
 gate.action.pulsar.constant=能量脉冲
 gate.action.pulsar.single=单次能量脉冲
-gate.action.pipe.wire=%s管道信号
+gate.action.pipe.wire=%s管线信号
 gate.action.redstone.signal=红石信号
 gate.action.robot.goto_station=前往站点
 gate.action.pipe.valve.open=开启
@@ -184,8 +195,10 @@ gate.action.station.provide_machine_request=提供已计算物品
 gate.action.station.accept_fluids=接受流体
 gate.action.station.povide_fluids=提供流体
 gate.action.robot.work_in_area=区域工作
+gate.action.robot.load_unload_area=区域加载/不加载
 gate.action.robot.wakeup=唤醒
 gate.action.station.forbid_robot=机器人禁忌
+gate.action.station.force_robot=Force Robot
 gate.action.robot.filter=过滤
 gate.action.robot.filter_tool=过滤工具
 
@@ -240,6 +253,9 @@ gate.trigger.pipe.wire.active=%s管线信号开
 gate.trigger.pipe.wire.inactive=%s管线信号关
 gate.trigger.timer=%s秒计时器
 gate.trigger.robot.sleep=休眠
+gate.trigger.robot.in.station=Robot In Station
+gate.trigger.robot.linked=Station Linked
+gate.trigger.robot.reserved=Station Reserved
 gate.trigger.machine.energyStoredHigh=能量储量高
 gate.trigger.machine.energyStoredLow=能量储量低
 gate.trigger.machine.energyStored.below25=能量储量 < 25%
@@ -287,6 +303,7 @@ item.goldGearItem.name=金齿轮
 item.diamondGearItem.name=钻石齿轮
 item.templateItem.name=模版
 item.wrenchItem.name=BC扳手
+item.paintbrush.name=漆刷
 item.pipeWaterproof.name=防水套管
 item.redPipeWire.name=红色管线
 item.bluePipeWire.name=蓝色管线
@@ -303,6 +320,7 @@ item.redstone_quartz_chipset.name=石英芯片
 item.redstone_comp_chipset.name=红石组芯片
 item.redstone_board.name=红石板
 item.robot.name=机器人
+item.tablet.name=Tablet
 item.blueprintItem.name=蓝图
 item.list.name=列表
 item.blueprint.unnamed=<未命名蓝图>
@@ -351,6 +369,7 @@ item.PipeFluidsSandstone.name=沙石流体管道
 item.PipePowerSandstone.name=沙石能量管道
 item.PipeRobotStation.name=机器人转接坞
 item.Facade.name=伪装板
+item.Facade.state_hollow=中空
 item.FacadePhased.name=多阶伪装板
 item.FacadePhased.state=%s: %s
 item.FacadePhased.state_default=默认:%s
@@ -362,11 +381,11 @@ item.debugger.name=调试器
 item.debugger.warning=仅用于测试!会导致泄密.
 item.package.name=包
 
-itemGroup.buildcraft.blocks=建筑|方块
 itemGroup.buildcraft.boards=建筑|机器人
-itemGroup.buildcraft.items=建筑|物品
+itemGroup.buildcraft.main=建筑
 itemGroup.buildcraft.pipes=建筑|管道
 itemGroup.buildcraft.facades=建筑|伪装板
+itemGroup.buildcraft.gates=建筑|门
 
 tile.architectBlock.name=建筑师工作台
 tile.assemblyTableBlock.name=芯片装配台
@@ -392,6 +411,7 @@ tile.libraryBlock.name=蓝图档案馆
 tile.machineBlock.name=采石场
 tile.markerBlock.name=地标
 tile.miningWellBlock.name=矿井
+tile.packagerBlock.name=Recipe Packager
 tile.pathMarkerBlock.name=路径标记
 tile.plainPipeBlock.name=采矿管道
 tile.programmingTableBlock.name=编程台
@@ -400,6 +420,7 @@ tile.refineryBlock.name=精炼厂
 tile.requester.name=请求机
 tile.spring.oil.name=油泉
 tile.spring.water.name=泉
+tile.stampingTableBlock.name=Stamping Table
 tile.tankBlock.name=储罐
 tile.zonePlan.name=区域规划机
 
@@ -422,14 +443,15 @@ tip.gate.wires.emerald=红,蓝,黄,绿
 tip.gate.expansions=§9§o已安装组件:
 
 tip.PipeFluidsCobblestone=不会与石质管道相连
-tip.PipeFluidsEmerald=输出类管道,流量为40 mB/t
-tip.PipeFluidsGold=基础类管道,流量为40 mB/t
-tip.PipeFluidsQuartz=基础类管道,流量为20 mB/t
-tip.PipeFluidsIron=阀门类管道,流量为10 mB/t
-tip.PipeFluidsSandstone=只能与管道相连,流量为10 mB/t
-tip.PipeFluidsStone=基础类管道,流量为10 mB/t\n不会与圆石管道相连
-tip.PipeFluidsVoid=销毁流体,流量为10 mB/t
-tip.PipeFluidsWood=输出类管道,流量为10 mB/t
+tip.PipeFluidsDiamond=整理排序液体
+tip.PipeFluidsEmerald=输出类管道
+tip.PipeFluidsGold=基础类管道
+tip.PipeFluidsQuartz=基础类管道
+tip.PipeFluidsIron=阀门类管道
+tip.PipeFluidsSandstone=仅与管道相连
+tip.PipeFluidsStone=基础类管道/t\n不会与圆石管道相连
+tip.PipeFluidsVoid=销毁流体
+tip.PipeFluidsWood=输出类管道
 tip.PipeItemsClay=插入型管道
 tip.PipeItemsCobblestone=基础类的管道,阻力大\n不会与石质或者石英管道相连
 tip.PipeItemsDaizuli=路由被涂色标记过的物品
@@ -441,14 +463,19 @@ tip.PipeItemsIron=路由物品
 tip.PipeItemsLapis=涂色标记物品
 tip.PipeItemsObsidian=吸纳物品
 tip.PipeItemsQuartz=基础类管道, 阻力低\n不会与石质或者圆石管道相连
-tip.PipeItemsSandstone=只能与管道相连
+tip.PipeItemsSandstone=仅与管道相连
 tip.PipeItemsStone=基础类管道, 阻力中等\n不会与圆石或者石英管道相连
 tip.PipeItemsVoid=销毁物品
 tip.PipeItemsWood=输出类管道
-tip.PipePowerWood=能量输入管道
-tip.PipePowerIron=可选能量限制管道
 tip.PipePowerEmerald=能量输入管道
+tip.PipePowerIron=可选能量限制管道
+tip.PipePowerSandstone=仅与管道相连
+tip.PipePowerWood=能量输入管道
 tip.PipeStructureCobblestone=结构支撑管道
+tip.deprecated=Deprecated
+
+tip.filler.excavate.on=Excavate
+tip.filler.excavate.off=Do Not Excavate
 
 tip.shift.PipeFluidsDiamond=界面接受任意流体容器
 tip.shift.PipeFluidsEmerald=界面接受任意流体容器
@@ -459,6 +486,9 @@ tip.shift.PipeItemsLapis=潜行点击以切换颜色
 tip.shift.PipeItemsObsidian=用引擎供能\n能量越多-作用范围越远
 tip.shift.PipePowerIron=用扳手或门来切换输送限度
 
+tip.PipeItemsEmerald.whitelist=白名单
+tip.PipeItemsEmerald.blacklist=黑名单
+tip.PipeItemsEmerald.roundrobin=循环(有序)
 
 tip.tool.add=添加
 tip.tool.fullscreen=全屏
@@ -513,8 +543,11 @@ bc_update.once=本信息默认仅显示一次
 bc_update.again=若想再次查看可用输入指令 '/buildcraft version'
 
 command.buildcraft.version=BuildCraft%s,适用于Minecraft %s (最新版本为: %s).
-command.buildcraft.versioninfo=版本信息.
-command.buildcraft.available=可用指令:
+command.buildcraft.changelog_header=建筑 %s的版本更新日志:
+
+command.buildcraft.aliases=Aliases: %s
+command.buildcraft.help=输入 '%s' 查看帮助.
+command.buildcraft.list=可用指令:
 command.buildcraft.permlevel=权限等级: %s
 command.buildcraft.noperms=你没有使用该指令的权限.
 
